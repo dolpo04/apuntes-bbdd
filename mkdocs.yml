@@ -1,0 +1,88 @@
+site_name: BASES DE DATOS 1º DAW - IES LA ENCANTÁ
+site_author: Gonzalo Ruiz Arenas
+site_description: Apuntes de la asignatura de Bases de Datos del primer curso de Desarrollo de Aplicaciones Web del IES La Encantá.
+site_url: https://example.com
+
+theme:
+  name: material
+  language: es
+  features:
+    - navigation.footer    # Agrega una barra de navegación en el pie de página
+    - toc.integrate           # Integra la tabla de contenidos en la barra lateral    
+    - content.code.copy
+    - content.tabs.link
+    - navigation.instant
+    - navigation.top
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.tracking
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Modo oscuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Modo claro
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - toc:
+      permalink: true  # Agrega un enlace de anclaje a cada encabezado en la tabla de contenidos
+      
+nav:
+  # - "": index.md
+  - Tema 1:
+      - Sistemas de Almacenamiento: tema1/tema1.md
+  - Tema 2:
+      - Introducción: tema2/tema2_01.md
+      - Diseño de Bases de Datos: tema2/tema2_02.md
+      - El Modelo Entidad-Relación: tema2/tema2_03.md
+      - Elementos del Modelo Entidad-Relación. ENTIDAD: tema2/tema2_04.md
+      - Elementos del Modelo Entidad-Relación. RELACIÓN: tema2/tema2_05.md
+      - Otras notaciones: tema2/tema2_06.md
+      - Elementos del Modelo Entidad-Relación. ATRIBUTOS: tema2/tema2_07.md
+      - Restricciones de Integridad: tema2/tema2_08.md
+      - Control de Redundancia: tema2/tema2_09.md
+      - Construcción de un Esquema Entidad-Relación: tema2/tema2_10.md
+      - El modelo Entidad-Relación Extendido: tema2/tema2_11.md
+      - El modelo Entidad-Relación Extendido. Generalización y Especialización: tema2/tema2_12.md
+      - El modelo Entidad-Relación Extendido. Tipos de Especialización: tema2/tema2_13.md
+      - El modelo Entidad-Relación Extendido. Agregación: tema2/tema2_14.md
+  - Tema 3:
+      - Introducción: tema3/tema3_01.md
+      - Conceptos Básicos del Modelo Relacional: tema3/tema3_02.md
+      - Elementos del Modelo Relacional. Tablas: tema3/tema3_03.md
+      - Elementos del Modelo Relacional. Claves: tema3/tema3_04.md
+      - Restricciones de Integridad en el Modelo Relacional: tema3/tema3_05.md
+      - Restricciones. Valores No Nulos: tema3/tema3_06.md
+      - Restricciones. Integridad Referencial: tema3/tema3_07.md
+      - Restricciones. Otras Restricciones: tema3/tema3_08.md
+      - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Entidades: tema3/tema3_09.md
+      - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Relaciones Binarias: tema3/tema3_10.md
+      - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Restricción de Identificador: tema3/tema3_11.md
+      - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Relaciones N-arias: tema3/tema3_12.md
+      - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Reflexivas: tema3/tema3_13.md
+      - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Generalización y Especialización: tema3/tema3_14.md
+      - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Campos Compuestos y Multivaluados: tema3/tema3_15.md
+      - Normalización: tema3/tema3_16.md
+      

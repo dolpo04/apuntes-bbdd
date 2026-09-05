@@ -1,0 +1,1554 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Apuntes de la asignatura de Bases de Datos del primer curso de Desarrollo de Aplicaciones Web del IES La Encantá.">
+      
+      
+        <meta name="author" content="Gonzalo Ruiz Arenas">
+      
+      
+        <link rel="canonical" href="https://example.com/tema1/tema1/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../tema2/tema2_01/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
+    
+    
+      
+        <title>Tema 1 - BASES DE DATOS 1º DAW - IES LA ENCANTÁ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tema-1-sistemas-de-almacenamiento-de-la-informacion" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="BASES DE DATOS 1º DAW - IES LA ENCANTÁ" class="md-header__button md-logo" aria-label="BASES DE DATOS 1º DAW - IES LA ENCANTÁ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BASES DE DATOS 1º DAW - IES LA ENCANTÁ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tema 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo oscuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Modo oscuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Modo claro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Modo claro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Inicio
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Tema 1
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../tema2/tema2_01/" class="md-tabs__link">
+          
+  
+  
+  Tema 2
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BASES DE DATOS 1º DAW - IES LA ENCANTÁ" class="md-nav__button md-logo" aria-label="BASES DE DATOS 1º DAW - IES LA ENCANTÁ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    BASES DE DATOS 1º DAW - IES LA ENCANTÁ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESULTADOS DE APRENDIZAJE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRITERIOS DE EVALUACIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. INTRODUCCIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-evolucion-de-los-sistemas-de-almacenamiento-de-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Evolución de los Sistemas de Almacenamiento de la Información
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Evolución de los Sistemas de Almacenamiento de la Información">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fichero-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Fichero manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sistemas-de-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Sistemas de ficheros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tipos-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Tipos de Acceso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-inconvenientes-de-los-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Inconvenientes de los Ficheros.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-sistemas-de-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Sistemas de bases de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modelos-de-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Modelos de Bases de Datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Modelos de Bases de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-repercusion-de-internet-en-los-modelos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Repercusión de Internet en los modelos de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-evolucion-de-los-modelos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Evolución de los modelos de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Evolución de los modelos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-modelo-relacional-en-entornos-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 Modelo relacional en entornos web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-modelos-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Modelos NoSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-bases-de-datos-distribuidas-y-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 Bases de datos distribuidas y en la nube
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sistemas-gestores-de-bases-de-datos-sgbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sistemas Gestores de Bases de Datos (SGBD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tipos-de-sistemas-gestores-de-bases-de-datos-sgbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tipos de Sistemas Gestores de Bases de Datos (SGBD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-legislacion-sobre-la-proteccion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Legislación sobre la protección de datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tema 2
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tema 2
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/tema2_01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 1 — Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tema2/tema2_02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parte 2 — Continuación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RESULTADOS DE APRENDIZAJE
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#criterios-de-evaluacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRITERIOS DE EVALUACIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduccion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. INTRODUCCIÓN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-evolucion-de-los-sistemas-de-almacenamiento-de-la-informacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Evolución de los Sistemas de Almacenamiento de la Información
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Evolución de los Sistemas de Almacenamiento de la Información">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-fichero-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Fichero manual
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-sistemas-de-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Sistemas de ficheros
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-tipos-de-acceso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 Tipos de Acceso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-inconvenientes-de-los-ficheros" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Inconvenientes de los Ficheros.
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-sistemas-de-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Sistemas de bases de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-modelos-de-bases-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Modelos de Bases de Datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Modelos de Bases de Datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-repercusion-de-internet-en-los-modelos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Repercusión de Internet en los modelos de datos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-evolucion-de-los-modelos-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Evolución de los modelos de datos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Evolución de los modelos de datos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-modelo-relacional-en-entornos-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.1 Modelo relacional en entornos web
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-modelos-nosql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.2 Modelos NoSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-bases-de-datos-distribuidas-y-en-la-nube" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2.3 Bases de datos distribuidas y en la nube
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-sistemas-gestores-de-bases-de-datos-sgbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Sistemas Gestores de Bases de Datos (SGBD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-tipos-de-sistemas-gestores-de-bases-de-datos-sgbd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Tipos de Sistemas Gestores de Bases de Datos (SGBD)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-legislacion-sobre-la-proteccion-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Legislación sobre la protección de datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tema-1-sistemas-de-almacenamiento-de-la-informacion">Tema 1: Sistemas de Almacenamiento de la Información</h1>
+<hr />
+<h3 id="resultados-de-aprendizaje">RESULTADOS DE APRENDIZAJE</h3>
+<p><strong>RA1:</strong> Reconoce los elementos de las bases de datos analizando sus funciones y valorando la utilidad de los sistemas gestores.</p>
+<h3 id="criterios-de-evaluacion">CRITERIOS DE EVALUACIÓN</h3>
+<p><strong>CE1a:</strong> Se han analizado los sistemas lógicos de almacenamiento y sus características.</p>
+<p><strong>CE1b:</strong> Se han identificado los distintos tipos de bases de datos según el modelo de datos utilizado.</p>
+<p><strong>CE1c:</strong> Se han identificado los distintos tipos de bases de datos en función de la ubicación de la información.</p>
+<p><strong>CE1d:</strong> Se ha evaluado la utilidad de un sistema gestor de bases de datos.</p>
+<p><strong>CE1e:</strong> Se ha reconocido la función de cada uno de los elementos de un sistema gestor de bases de datos.</p>
+<p><strong>CE1f:</strong> Se han clasificado los sistemas gestores de bases de datos.</p>
+<p><strong>CE1i:</strong> Se ha identificado la legislación vigente sobre protección de datos.</p>
+<hr />
+<h2 id="1-introduccion">1. INTRODUCCIÓN</h2>
+<p>¿Te has preguntado alguna vez dónde y de qué manera se almacenan y gestionan los datos que utilizamos diariamente? Si pensamos en cualquier acción de nuestra vida cotidiana, o si analizamos la mayoría de los ámbitos de actividad, nos encontramos que la utilización de las bases de datos está ampliamente extendida. Éstas, y los datos contenidos en ellas, serán imprescindibles para llevar a cabo multitud de acciones.</p>
+<ul>
+<li>Cuando operamos en el cajero automático.</li>
+<li>Al solicitar un certificado en un organismo público.</li>
+<li>Cuando acudimos a la consulta del médico.</li>
+<li>Al inscribirnos en un curso, plataforma OnLine, etc.</li>
+<li>Si utilizas un GPS.</li>
+<li>Cuando reservamos unas localidades para un evento deportivo o espectáculo.</li>
+<li>Si consumimos ocio digital.</li>
+<li>Cuando consultamos cualquier información en Internet. (Bibliotecas, enciclopedias, museos, etc.)</li>
+<li>Al registrarte en una página de juegos OnLine, redes sociales o foros.</li>
+<li>Incluso, si tienes coche, puede ser que éste incorpore alguna base de datos.</li>
+</ul>
+<p>Suponemos que no es necesario que continuemos más para darnos cuenta de que casi todo lo que nos rodea, en alguna medida, está relacionado con los datos, su almacenamiento y su gestión. El gran volumen de datos que actualmente manejamos y sus innumerables posibilidades requieren de la existencia de técnicos perfectamente formados y capaces de trabajar con ellos.</p>
+<p>Los <strong>datos</strong> son elementos básicos que representan hechos, valores o registros sin un significado completo por sí mismos, como números, textos o fechas. Cuando estos datos se organizan, procesan e interpretan, se transforman en <strong>información</strong>, que resulta útil para la toma de decisiones y el funcionamiento de las aplicaciones.</p>
+<hr />
+<h2 id="2-evolucion-de-los-sistemas-de-almacenamiento-de-la-informacion">2. Evolución de los Sistemas de Almacenamiento de la Información</h2>
+<h3 id="21-fichero-manual">2.1 Fichero manual</h3>
+<p>Hasta hace unas décadas, la información se almacenaba en <strong>soporte papel</strong>, organizada en carpetas y archivadores.</p>
+<p>Ejemplos:</p>
+<ul>
+<li>Expedientes académicos</li>
+<li>Historias clínicas</li>
+<li>Fichas de clientes o proveedores</li>
+</ul>
+<p><img alt="Archivo manual" src="../IMG/img01.jpg" /></p>
+<p>Este sistema dejó de ser eficiente cuando el volumen de información aumentó.</p>
+<hr />
+<h3 id="22-sistemas-de-ficheros">2.2 Sistemas de ficheros</h3>
+<p>Las primeras aplicaciones informáticas almacenaban los datos en <strong>archicos o ficheros</strong> manejados directamente por los programas.</p>
+<p>¿Qué es entoces un fichero o archivo?
+Debemos saber que existen diferentes tipos de fichero según su formato o estructura.</p>
+<p>Pero por lo general podemos definirlo como:</p>
+<div class="admonition definition">
+<p class="admonition-title">Definición</p>
+<p>Un archivo o fichero es un conjunto organizado  de datos relacionados entre sí, que se almacenan de forma permanente en un  dispositivo de almacenamiento (HDD,SSD,USB,etc...), y que pueden ser    recuperados, modificados o procesados posteriormente por un sistema informático.</p>
+</div>
+<p>El formaro se refiere a como están representado los datos dentro del fichero siendo de texto (.txt, .csv, .xml, .json) o ficheros binarios (.exe, .dat, .jpg, .mp3).</p>
+<p>Ejemplo de un fichero de texto llamado proveedores.txt:
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Juan Pérez García,678123456,Madrid,juan.perez@gmail.com;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>María López Sánchez,654987321,Barcelona,maria.lopez@hotmail.com;
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Carlos Ruiz Martín,612345678,Valencia,carlos.ruiz@yahoo.es;
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Ana Gómez Torres,699112233,Sevilla,ana.gomez@outlook.com;
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Luis Fernández Mora,622334455,Bilbao,luis.fernandez@gmail.com;
+</code></pre></div></p>
+<p>Los datos dentro del fichero debe tener una organización o estructura para que puedan ser leída desde algún programa. En el fichero anterior:</p>
+<ul>
+<li>cada línea es un registro ya que todos los datos de la misma pertenecen a un mismo proveedor.</li>
+<li>los registros están separados por punto y com (;).</li>
+<li>cada registro esta compuestos por los campos (nombre y apelidos, teléfono, ciudad, email).</li>
+<li>los campos están separados por coma (,).</li>
+</ul>
+<hr />
+<h3 id="23-tipos-de-acceso">2.3 Tipos de Acceso</h3>
+<p>Según la manera que tengamos de acceder a un registros los ficheros se clasifican en varios tipors:</p>
+<p><strong>Secuenciales:</strong> Los registros se almacenan de forma contigua y ordenada.</p>
+<p>Ventajas:</p>
+<ul>
+<li>
+<p>Acceso rápido a bloques contiguos</p>
+</li>
+<li>
+<p>No hay desperdicio de espacio</p>
+</li>
+</ul>
+<p>Inconvenientes:</p>
+<ul>
+<li>Acceso lento a registros concretos</li>
+<li>No permite inserciones intermedias</li>
+<li>Borrado lógico</li>
+</ul>
+<p><strong>Acceso Directo o Aleatorio:</strong></p>
+<p>Permite acceder a un registro directamente mediante una clave <strong>(indexados)</strong> o un puntero con la dirección al siguiente registros <strong>(encadenados)</strong>.</p>
+<p>Características:</p>
+<ul>
+<li>Acceso inmediato</li>
+<li>Registros de longitud fija</li>
+<li>Actualización en tiempo real</li>
+<li>Uso de discos magnéticos</li>
+</ul>
+<h3 id="24-inconvenientes-de-los-ficheros">2.4 Inconvenientes de los Ficheros.</h3>
+<p>Esta forma de guardar la información tiene muchos inconvenientes:</p>
+<ul>
+<li><strong>Redundacia de datos</strong></li>
+<li><strong>Problemas de seguridad</strong></li>
+<li><strong>Problemas de acceso concurrente</strong></li>
+<li><strong>Dificultad a la hora de acceder a los datos relacionados</strong></li>
+<li><strong>Dependencia del SW respecto a los datos</strong></li>
+<li><strong>Dificultad de recuperación de archivos</strong></li>
+</ul>
+<p>Los ficheros fueron una solución mientras se accedia a la información desde una única aplicación, pero cuando se empezaron a desarrollar las redes, internet, necesidad de utilizar los mismos recursos por varios usuarios a la vez, etc. Los problemas antes mencionados hicieron que este sistema no fuera viable y para solucionarlo se desarrollaron las bases de datos.</p>
+<h3 id="25-sistemas-de-bases-de-datos">2.5 Sistemas de bases de datos</h3>
+<p>Los sistemas de bases de datos son lugares donde poder almacenar la información de forma estructurada, sin redundancia, fácil acceso y con independencia de los programas que las utilizan.</p>
+<div class="admonition definition">
+<p class="admonition-title">Base de datos</p>
+<p>Una <strong>base de datos</strong> es un conjunto organizado de datos relacionados entre sí, almacenados de forma estructurada, que pueden ser accedidos, consultados y actualizados por uno o varios usuarios o aplicaciones de manera eficiente y segura.</p>
+</div>
+<p><strong>Ventajas de las bases de datos</strong></p>
+<ul>
+<li>Control de redundancia</li>
+<li>Integridad de la información</li>
+<li>Acceso múltiple</li>
+<li>Permite el control de permisos a los usuarios sobre los datos</li>
+<li>Protección frente a fallos</li>
+<li>Independencia de los datos sobre las aplicaciones</li>
+</ul>
+<hr />
+<h2 id="3-modelos-de-bases-de-datos">3. Modelos de Bases de Datos</h2>
+<p>Un <strong>modelo de datos</strong> es un conjunto de herramientas para describir datos, relaciones y restricciones.</p>
+<ul>
+<li>
+<p><strong>Modelo Jerárquico</strong> (principios años 60) organiza los datos en una estructura de <strong>árbol invertido</strong>, donde cada registro padre puede tener varios hijos, pero cada hijo solo puede tener un único padre. Es adecuado para representar relaciones <strong>1:N</strong>, pero poco flexible para relaciones más complejas.</p>
+</li>
+<li>
+<p><strong>Modelo en red</strong> (finales de los años 60) organiza los datos mediante una estructura de <strong>grafo</strong>, en la que un registro puede tener <strong>varios padres y varios hijos</strong> permitiendo relaciones <strong>N:M (muchos a muchos)</strong>. Es más flexible que el jerárquico, pero complejo de diseñar y mantener.</p>
+</li>
+<li>
+<p><strong>Modelo relacional</strong> (fue propuesto por Edgar F. Codd en 1970) representa los datos mediante <strong>tablas (relaciones)</strong>, formadas por filas (registros) y columnas (campos), relacionando las tablas entre sí mediante claves.
+Es el modelo más utilizado en la actualidad. Destaca por su <strong>simplicidad</strong>, <strong>independencia de los datos</strong> y el uso del lenguaje <strong>SQL</strong> para realizar consultas.</p>
+</li>
+<li>
+<p><strong>Modelo orientado a objetos</strong> (años 80 y principios de los 90) organiza los datos como <strong>objetos</strong>, que integran tanto los datos como los métodos que operan sobre ellos, siguiendo los principios de la programación orientada a objetos. Es adecuado para aplicaciones complejas, aunque su uso es menos común que el modelo relacional.</p>
+</li>
+</ul>
+<hr />
+<h3 id="31-repercusion-de-internet-en-los-modelos-de-datos">3.1 Repercusión de Internet en los modelos de datos</h3>
+<p>La aparición y expansión de <strong>Internet</strong> ha tenido un impacto decisivo en la forma en que se almacenan, gestionan y acceden a los datos. Los modelos de datos tradicionales, pensados para sistemas locales y centralizados, han tenido que evolucionar para dar respuesta a nuevas necesidades como la <strong>escala global</strong>, el <strong>acceso concurrente masivo</strong> y la <strong>disponibilidad continua</strong>.</p>
+<hr />
+<p><strong>Cambios introducidos por Internet</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Cambios clave</p>
+<p>Internet ha provocado un crecimiento exponencial del volumen de datos y del número de usuarios que acceden a ellos de forma simultánea.</p>
+</div>
+<p>Principales consecuencias:</p>
+<ul>
+<li>Necesidad de <strong>bases de datos distribuidas</strong></li>
+<li>Acceso desde <strong>ubicaciones geográficas diferentes</strong></li>
+<li>Altos niveles de <strong>concurrencia</strong></li>
+<li>Requisitos de <strong>alta disponibilidad y tolerancia a fallos</strong></li>
+<li>Integración con aplicaciones web y móviles</li>
+</ul>
+<hr />
+<h3 id="32-evolucion-de-los-modelos-de-datos">3.2 Evolución de los modelos de datos</h3>
+<p>Los modelos clásicos (jerárquico, en red y relacional) no siempre son suficientes para afrontar las demandas de las aplicaciones modernas basadas en Internet. Como resultado, han surgido o se han popularizado nuevos modelos de datos.</p>
+<hr />
+<h4 id="321-modelo-relacional-en-entornos-web">3.2.1 Modelo relacional en entornos web</h4>
+<div class="admonition definition">
+<p class="admonition-title">Relacional en Internet</p>
+<p>El <strong>modelo relacional</strong> se ha adaptado a Internet mediante el uso de arquitecturas cliente-servidor, bases de datos distribuidas y replicación de datos.</p>
+</div>
+<p>Sigue siendo el modelo más utilizado en aplicaciones web tradicionales
+(e-commerce, gestión empresarial, sistemas bancarios).</p>
+<hr />
+<p><strong>Técnicas de fragmentación</strong> </p>
+<div class="admonition info">
+<p class="admonition-title">Fragmentación</p>
+<p>La <strong>fragmentación</strong> es una técnica utilizada en bases de datos distribuidas para <strong>dividir una base de datos en partes más pequeñas</strong>, llamadas fragmentos, que se almacenan en diferentes nodos.</p>
+</div>
+<p>El objetivo es:</p>
+<ul>
+<li>Mejorar el rendimiento</li>
+<li>Reducir el tráfico de red</li>
+<li>Acercar los datos a los usuarios que los utilizan</li>
+</ul>
+<hr />
+<p><strong>Fragmentación horizontal</strong></p>
+<div class="admonition definition">
+<p class="admonition-title">Fragmentación horizontal</p>
+<p>Consiste en dividir una tabla en <strong>subconjuntos de filas (registros)</strong> según una condición.</p>
+</div>
+<p>Cada fragmento contiene <strong>los mismos campos</strong>, pero diferentes registros.</p>
+<div class="admonition tip">
+<p class="admonition-title">Ejemplo:</p>
+<p>Clientes de Madrid en un servidor y clientes de Valencia en otro.</p>
+</div>
+<hr />
+<p><strong>Fragmentación vertical</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Fragmentación vertical</p>
+<p>Consiste en dividir una tabla en <strong>subconjuntos de columnas (campos)</strong>,
+manteniendo siempre la clave primaria.</p>
+</div>
+<p>Cada fragmento contiene distintos atributos de la misma tabla.</p>
+<div class="admonition tip">
+<p class="admonition-title">Ejemplo:</p>
+<p>Un fragmento con datos personales y otro con datos económicos.</p>
+</div>
+<hr />
+<p><strong>Fragmentación mixta</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Fragmentación mixta</p>
+<p>Combina la <strong>fragmentación horizontal y vertical</strong>, dividiendo primero por filas y después por columnas (o al revés).</p>
+</div>
+<p>Es la técnica más flexible, pero también la más compleja de implementar.</p>
+<hr />
+<h4 id="322-modelos-nosql">3.2.2 Modelos NoSQL</h4>
+<div class="admonition definition">
+<p class="admonition-title">Modelos NoSQL</p>
+<p>Los <strong>modelos NoSQL</strong> agrupan distintos tipos de bases de datos diseñadas para trabajar en entornos distribuidos, con grandes volúmenes de datos y alta escalabilidad.</p>
+</div>
+<p><strong>Origen:</strong> comienzan a popularizarse a partir de <strong>2008</strong>, con el auge de Internet y las grandes plataformas web.</p>
+<p>Tipos principales:</p>
+<ul>
+<li><strong>Clave-valor</strong> (Redis, DynamoDB)</li>
+<li><strong>Documentos</strong> (MongoDB)</li>
+<li><strong>Columnas</strong> (Cassandra)</li>
+<li><strong>Grafos</strong> (Neo4j)</li>
+</ul>
+<hr />
+<p><strong>Modelo de datos documental</strong></p>
+<div class="admonition definition">
+<p class="admonition-title">Modelo documental</p>
+<p>El <strong>modelo documental</strong> almacena la información en documentos semi-estructurados, normalmente en formato <strong>JSON</strong> o <strong>BSON</strong>, facilitando su uso en aplicaciones web.</p>
+</div>
+<p>Muy utilizado en APIs REST y aplicaciones web modernas.</p>
+<hr />
+<p><strong>Modelo de grafos</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Modelo de grafos</p>
+<p>El <strong>modelo de grafos</strong> representa los datos mediante nodos y relaciones, lo que facilita el modelado de redes sociales, recomendaciones y relaciones complejas.</p>
+</div>
+<p>Especialmente útil en aplicaciones basadas en Internet como redes sociales.</p>
+<hr />
+<h4 id="323-bases-de-datos-distribuidas-y-en-la-nube">3.2.3 Bases de datos distribuidas y en la nube</h4>
+<div class="admonition tip">
+<p class="admonition-title">Internet y la nube</p>
+<p>Internet ha impulsado el uso de bases de datos en la <strong>nube</strong>, donde los datos se almacenan y gestionan de forma distribuida en múltiples servidores.</p>
+</div>
+<p>Características:</p>
+<ul>
+<li>Escalabilidad horizontal</li>
+<li>Alta disponibilidad</li>
+<li>Replicación automática</li>
+<li>Acceso global</li>
+</ul>
+<hr />
+<h2 id="4-sistemas-gestores-de-bases-de-datos-sgbd">4. Sistemas Gestores de Bases de Datos (SGBD)</h2>
+<p>El Sistema gestor de la base de datos (SGBD) es una aplicación que permite a los usuarios definir, crear, manipular y administras Bases de datos.</p>
+<p><img alt="imagen20" src="../IMG/img20.png" /></p>
+<hr />
+<p><strong>Funciones</strong></p>
+<p>Las funciones de un SGBD son:</p>
+<ul>
+<li>Asegurar la independencia de los datos respecto a las aplicaciones y los usuarios.</li>
+<li>Ofrecer eficiencia y seguridad a la hora de extraer o almacenar información en una base de datos, protegiendo el acceso a usuarios sin los permisos adecuados.</li>
+<li>Asegurar la integridad de los datos en todo momento, detectando las operaciones erróneas que introducen inconsistencia en los datos y permitiendo el uso de transacciones en las operaciones.</li>
+<li>Permitir el acceso concurrente y recuperación en caso de fallo (tolerancia a fallos).</li>
+<li>Facilitar la administración de los datos.</li>
+</ul>
+<hr />
+<p><strong>Componentes de un SGBD</strong></p>
+<p>Un <strong>Sistema Gestor de Bases de Datos (SGBD)</strong> está formado por varios componentes que trabajan conjuntamente para almacenar, gestionar y proteger los datos.</p>
+<hr />
+<p><strong>1. Lenguajes del SGBD</strong></p>
+<div class="admonition definition">
+<p class="admonition-title">Lenguajes del SGBD</p>
+<p>Son los lenguajes que permiten definir la estructura de la base de datos y manipular la información almacenada en ella.</p>
+</div>
+<p>Incluyen:</p>
+<ul>
+<li>
+<p><strong>DDL (Lenguaje de Definición de Datos)</strong><br />
+  Permite crear, modificar y eliminar estructuras de la base de datos<br />
+  (tablas, vistas, índices, etc.).</p>
+</li>
+<li>
+<p><strong>DML (Lenguaje de Manipulación de Datos)</strong><br />
+  Permite consultar y modificar los datos (<code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>).</p>
+</li>
+<li>
+<p><strong>DCL (Lenguaje de Control de Datos)</strong><br />
+  Permite gestionar permisos y seguridad (<code>GRANT</code>, <code>REVOKE</code>).</p>
+</li>
+</ul>
+<hr />
+<p><strong>2. Diccionario de datos</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Diccionario de datos</p>
+<p>Es un conjunto de <strong>metadatos</strong> que describe la estructura de la base de datos: tablas, campos, tipos de datos, relaciones y restricciones.</p>
+</div>
+<p>Permite al SGBD conocer cómo están organizados los datos.</p>
+<hr />
+<p><strong>3. Motor de almacenamiento</strong></p>
+<div class="admonition definition">
+<p class="admonition-title">Motor de almacenamiento</p>
+<p>Es el componente encargado de <strong>gestionar físicamente</strong> cómo se almacenan los
+datos en el disco y cómo se recuperan.</p>
+</div>
+<p>Funciones principales:</p>
+<ul>
+<li>Gestión de archivos</li>
+<li>Acceso a bloques de datos</li>
+<li>Optimización del almacenamiento</li>
+</ul>
+<hr />
+<p><strong>4. Gestor de consultas</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Gestor de consultas</p>
+<p>Se encarga de interpretar, optimizar y ejecutar las consultas realizadas por los usuarios o aplicaciones.</p>
+</div>
+<p>Decide la forma más eficiente de acceder a los datos.</p>
+<hr />
+<p><strong>5. Gestor de transacciones</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Gestor de transacciones</p>
+<p>Controla las <strong>transacciones</strong>, garantizando que se cumplan las propiedades <strong>ACID</strong> (Atomicidad, Consistencia, Aislamiento y Durabilidad).</p>
+</div>
+<p>Fundamental para mantener la integridad de los datos.</p>
+<hr />
+<p><strong>6. Gestor de concurrencia</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Gestor de concurrencia</p>
+<p>Permite que varios usuarios accedan a la base de datos simultáneamente sin provocar inconsistencias.</p>
+</div>
+<p>Utiliza mecanismos como bloqueos y control de versiones.</p>
+<hr />
+<p><strong>7. Gestor de seguridad</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Gestor de seguridad</p>
+<p>Controla el acceso a la base de datos, asegurando que solo los usuarios
+autorizados puedan realizar determinadas operaciones.</p>
+</div>
+<p>Incluye:</p>
+<ul>
+<li>Usuarios</li>
+<li>Roles</li>
+<li>Permisos</li>
+</ul>
+<hr />
+<p><strong>8. Sistema de copias de seguridad y recuperación</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Copias de seguridad y recuperación</p>
+<p>Permite realizar <strong>backups</strong> y recuperar la base de datos en caso de fallos, errores o pérdidas de información.</p>
+</div>
+<p>Esencial para la fiabilidad del sistema.</p>
+<hr />
+<p><strong>9. Interfaces de usuario y aplicaciones</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Interfaces del SGBD</p>
+<p>Son los medios que permiten a los usuarios y aplicaciones comunicarse con el SGBD.</p>
+</div>
+<p>Ejemplos:</p>
+<ul>
+<li>Consolas de administración</li>
+<li>Interfaces gráficas</li>
+<li>APIs para lenguajes de programación</li>
+</ul>
+<hr />
+<h2 id="5-tipos-de-sistemas-gestores-de-bases-de-datos-sgbd">5. Tipos de Sistemas Gestores de Bases de Datos (SGBD)</h2>
+<p>Los <strong>Sistemas Gestores de Bases de Datos (SGBD)</strong> pueden clasificarse atendiendo a distintos criterios, según sus características y el uso que se les da.</p>
+<ul>
+<li>Según el modelo de datos</li>
+<li>Según el número de usuarios: <strong>Monousuario</strong>, <strong>Multiusuario</strong>  </li>
+<li>Según la distribución de los datos: <strong>Centralizados</strong>, <strong>Distribuidos</strong>  </li>
+<li>Según el propósito: <strong>De propósito general</strong>,<strong>De propósito específico</strong>  </li>
+<li>Según el coste: <strong>SGBD comerciales</strong>, <strong>SGBD libres o de código abierto</strong>  </li>
+</ul>
+<hr />
+<h2 id="6-legislacion-sobre-la-proteccion-de-datos">6. Legislación sobre la protección de datos</h2>
+<p>En el desarrollo de aplicaciones y en la gestión de bases de datos es habitual tratar con <strong>datos personales</strong>, por lo que es imprescindible conocer la legislación que regula su uso, almacenamiento y protección.</p>
+<p>En España, la protección de datos personales está regulada principalmente por la normativa europea y nacional, cuyo objetivo es <strong>garantizar los derechos y libertades de las personas</strong> respecto al tratamiento de sus datos.</p>
+<hr />
+<p><strong>¿Qué se entiende por dato personal?</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Dato personal</p>
+<p>Se considera <strong>dato personal</strong> cualquier información que identifique o pueda identificar a una persona física.</p>
+</div>
+<p>Ejemplos:</p>
+<ul>
+<li>Nombre y apellidos</li>
+<li>DNI</li>
+<li>Dirección</li>
+<li>Teléfono</li>
+<li>Correo electrónico</li>
+<li>Dirección IP</li>
+<li>Datos académicos o laborales</li>
+</ul>
+<p>En bases de datos, la mayoría de la información que se gestiona suele contener datos personales.</p>
+<hr />
+<p><strong>Normativa aplicable en España</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Marco legal</p>
+<p>La legislación española en materia de protección de datos se basa en dos normas fundamentales:</p>
+</div>
+<ul>
+<li>
+<p><strong>Reglamento General de Protección de Datos (RGPD)</strong><br />
+  Normativa de la Unión Europea de aplicación directa en todos los estados miembros desde <strong>2018</strong>.</p>
+</li>
+<li>
+<p><strong>Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD)</strong><br />
+  Ley española que adapta el RGPD al ordenamiento jurídico nacional.</p>
+</li>
+</ul>
+<hr />
+<p><strong>Principios de la protección de datos</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Principios del tratamiento de datos</p>
+<p>El tratamiento de datos personales debe cumplir una serie de principios básicos:</p>
+</div>
+<ul>
+<li>
+<p><strong>Licitud, lealtad y transparencia</strong><br />
+  Los datos deben recogerse de forma legal e informando al usuario.</p>
+</li>
+<li>
+<p><strong>Limitación de la finalidad</strong><br />
+  Los datos solo pueden usarse para el fin para el que fueron recogidos.</p>
+</li>
+<li>
+<p><strong>Minimización de datos</strong><br />
+  Solo se deben almacenar los datos estrictamente necesarios.</p>
+</li>
+<li>
+<p><strong>Exactitud</strong><br />
+  Los datos deben ser correctos y estar actualizados.</p>
+</li>
+<li>
+<p><strong>Limitación del plazo de conservación</strong><br />
+  No deben conservarse más tiempo del necesario.</p>
+</li>
+<li>
+<p><strong>Integridad y confidencialidad</strong><br />
+  Los datos deben protegerse frente a accesos no autorizados.</p>
+</li>
+</ul>
+<hr />
+<p><strong>Derechos de las personas (Derechos ARSULIPO)</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Derechos de los usuarios</p>
+<p>La legislación reconoce una serie de derechos a las personas sobre sus datos personales, conocidos como <strong>derechos ARSULIPO</strong>.</p>
+</div>
+<p>Incluyen:</p>
+<ul>
+<li><strong>Acceso</strong>: conocer qué datos se están tratando</li>
+<li><strong>Rectificación</strong>: corregir datos incorrectos</li>
+<li><strong>Supresión</strong> (derecho al olvido): eliminar los datos</li>
+<li><strong>Limitación del tratamiento</strong></li>
+<li><strong>Portabilidad</strong>: recibir los datos en formato estructurado</li>
+<li><strong>Oposición</strong>: oponerse al tratamiento de los datos</li>
+</ul>
+<p>Las aplicaciones deben facilitar el ejercicio de estos derechos.</p>
+<hr />
+<p><strong>Obligaciones del responsable del tratamiento</strong> </p>
+<div class="admonition definition">
+<p class="admonition-title">Responsable del tratamiento</p>
+<p>Es la persona o entidad que decide cómo y para qué se tratan los datos personales.</p>
+</div>
+<p>Obligaciones principales:</p>
+<ul>
+<li>Garantizar la seguridad de los datos</li>
+<li>Aplicar medidas técnicas y organizativas adecuadas</li>
+<li>Informar al usuario del tratamiento de sus datos</li>
+<li>Notificar brechas de seguridad</li>
+<li>Cumplir los principios del RGPD</li>
+</ul>
+<hr />
+<p><strong>Medidas de seguridad en bases de datos</strong> </p>
+<div class="admonition tip">
+<p class="admonition-title">Relación con Bases de Datos</p>
+<p>En el ámbito de las bases de datos, la protección de datos implica aplicar medidas de seguridad técnicas.</p>
+</div>
+<p>Ejemplos:</p>
+<ul>
+<li>Control de acceso mediante usuarios y permisos</li>
+<li>Cifrado de datos</li>
+<li>Copias de seguridad</li>
+<li>Registro de accesos</li>
+<li>Uso de contraseñas seguras</li>
+</ul>
+<p>El SGBD juega un papel fundamental en la protección de los datos personales.</p>
+<hr />
+<p><strong>Importancia para el desarrollador DAW</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Responsabilidad profesional</p>
+<p>Un desarrollador es responsable del correcto tratamiento de los datos personales en las aplicaciones que desarrolla.</p>
+</div>
+<p>Consecuencias del incumplimiento:</p>
+<ul>
+<li>Sanciones económicas</li>
+<li>Responsabilidad legal</li>
+<li>Pérdida de confianza de los usuarios</li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Volver al principio
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tracking", "navigation.tabs", "navigation.top", "toc.follow", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

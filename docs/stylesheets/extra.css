@@ -1,0 +1,31 @@
+.center {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.subrayado {
+  text-decoration: underline;
+}
+
+.highlight {
+  background-color: #eee;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.compact p {
+  margin: 0.25em 0;
+  line-height: 1.4;
+}
+
+.md-typeset__scrollwrap {
+  display: flex;
+  justify-content: center;
+}
+
+.md-typeset table {
+  width: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
