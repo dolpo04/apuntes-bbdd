@@ -8,7 +8,7 @@ Entre dos tipos de entidad puede existir más de un tipo de interrelación.
 
 ![img05.png](IMG/img05.png){ .center }
 
-## Elementos de un tipo de interrelación
+## Elementos de la relación
 
 ### **Nombre:**
 
