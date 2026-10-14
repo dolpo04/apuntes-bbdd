@@ -29,3 +29,12 @@
   border-radius: 8px;
   overflow: hidden;
 }
+
+.md-typeset table thead {
+    background-color: #444;
+    color: #fff;
+}
+
+.md-typeset table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
