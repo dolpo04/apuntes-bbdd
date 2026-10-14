@@ -86,4 +86,6 @@ nav:
       - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Campos Compuestos y Multivaluados: tema3/tema3_15.md
       - Normalización: tema3/tema3_16.md
       - Diccionario de Datos: tema3/tema3_17.md
+    - Tema 4:
+      - Introducción: tema4/tema4_01.md
       
