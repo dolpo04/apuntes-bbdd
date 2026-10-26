@@ -17,7 +17,7 @@ Al poner en el atributo `dni` la restricción de `Valor No Nulo` estamos haciend
 ![imgT3_12.png](IMG/imgT3_12.png){.center}
 
 !!!tip "Recuerda"
-    La clave ajena conceptualmente es la propagación de la clave primaria de la entidad del muchos a la entidad del 1, esta columna que añadimos en la entidad del 1 es normal que utilicemos el mismo nombre que la clave primaria a la que apunta, pero podemos cambiarla y poner un nombre que nos facilete su compresión. En lo que tienen que coincidir la FK y PK es en tener el mismo tipo de datos.
+    La clave ajena conceptualmente es la propagación de la clave primaria de la entidad del uno a la entidad del muchos, esta columna que añadimos en la entidad del muchos es normal que utilicemos el mismo nombre que la clave primaria a la que apunta, pero podemos cambiarla y poner un nombre que nos facilete su compresión. En lo que tienen que coincidir la FK y PK es en tener el mismo tipo de datos.
 
 **2. Relaciones con Cardinalida 1:1**
 

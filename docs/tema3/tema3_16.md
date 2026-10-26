@@ -120,7 +120,7 @@ Ejemplo:
 | 010203040 | BASES DE DATOS  |
 
 
-`LIBRO (`<span class="subrayado">`Código_lib*, Autor`</span>`)`
+`AUTOR (`<span class="subrayado">`Código_lib*, Autor`</span>`)`
 
 | CÓDIGO_LIB | NOMBRE_AUT   |
 |------------|--------------|
