@@ -86,6 +86,24 @@ nav:
       - Conversión de un Esquema Entidad-Relación a un Esquema Relacional. Campos Compuestos y Multivaluados: tema3/tema3_15.md
       - Normalización: tema3/tema3_16.md
       - Diccionario de Datos: tema3/tema3_17.md
- # - Tema 4:
- #     - Introducción: tema4/tema4_01.md
+  - Tema 4:
+      - Introducción: tema4/tema4_01.md
+      - Lenguaje de Consulta Estructurado (SQL): tema4/tema4_02.md
+      - Herramientas Gráficas para los SGBD: tema4/tema4_03.md
+      - Interprete de Comandos de los SGBD: tema4/tema4_04.md   
+      - El Lenguaje de Definición de Datos (DDL): tema4/tema4_05.md
+      - Creación de Bases de Datos: tema4/tema4_06.md
+      - Modificación de una Base de Datos: tema4/tema4_07.md
+      - Eliminación de una Base de Datos: tema4/tema4_08.md
+      - Creación de Tablas: tema4/tema4_09.md
+      - Creación de de Tablas a partir de un SELECT: tema4/tema4_10.md
+      - Opciones para la Declaración de las Claves Ajenas. FOREIGN KEY: tema4/tema4_11.md
+      - La Cláusula CONSTRAINT: tema4/tema4_12.md
+      - Tipos de Datos en SQL: tema4/tema4_13.md
+      - Mostrar la Creación de una Tabla: tema4/tema4_14.md
+      - Modificación de Tablas: tema4/tema4_15.md
+      - Eliminación de Tablas: tema4/tema4_16.md
+      - Renombrar Tablas: tema4/tema4_17.md
+
+
       
